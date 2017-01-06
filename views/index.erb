@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+  <head>
+    <title>Mastermind</title>
+  </head>
+
+  <body>
+    <h2 align='center'>Welcome To Mastermind</h2>
+    <p>Enter any of the following colors: <%# a_game.c_code.values.join(', ') %></p>
+    <p>a 'O' signifies a correct color but an incorrect position, while a '@' signifies a correct color and a correct position</p>
+    <p>you have 10 turns, good luck</p>
+    <table>
+      <tr>
+        <th>turn</th>
+        <th>colors</th>
+        <th>clues</th>
+      </tr>
+      <%= score %>
+    </table>
+      
+      
+
+    <p>turn number: <%= turn %></p>
+    <p>your guess is: <%= guess %></p>
+    <p><%= result %></p>
+    <p><%= result if result == 'Correct! You Win!'%></p>
+      
+    
+    <form>
+      <input type='text' name='color_guess'/>
+      <input type='submit' value='submit guess'/>
+    </form>
+
+  </body>
+</html>
