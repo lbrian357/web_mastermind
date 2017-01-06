@@ -25,8 +25,8 @@ end
 class Game
   attr_accessor :picks, :win
   def initialize
-    #@picks = pick 
-    @picks = [0, 0, 1, 1] #for testing purposes
+    @picks = pick 
+    #@picks = [0, 0, 1, 1] #for testing purposes
     @win = false
   end
 
@@ -55,11 +55,11 @@ class Game
 
   def guessing(picks, guess, i) #compares answer with guess and outputs clue
     if guess == picks
-      @win = true #find out WHY attr_accessor is not enough to change win = true to @win = true
+      self.win = true #find out WHY attr_accessor is not enough to change win = true to @win = true
 
       #return index_to_color(guess)
       return 'Correct! You Win!'
-    elsif i > 10
+    elsif i == 10
       return "WRONG! You Lose!
               \nthe answer was #{index_to_color(picks)}"
     else
@@ -85,13 +85,6 @@ class Game
       return correct_colors.join if win != true && i != 10 #return clues
       end
   end
-
-  #print out clues if guesses were in answer
-  #O for right color but wrong position
-  #and @ for right color and right position
-  #it should print how many chances are left and keep history of guesses
-  #when guess == picks and guesses_left > 0 you win
-
 
 end
 

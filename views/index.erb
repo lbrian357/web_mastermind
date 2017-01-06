@@ -1,13 +1,13 @@
 <!DOCTYPE html>
   <head>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
     <title>Mastermind</title>
   </head>
 
   <body>
-    <h2 align='center'>Welcome To Mastermind</h2>
-    <p>Enter any of the following colors: <%# a_game.c_code.values.join(', ') %></p>
-    <p>a 'O' signifies a correct color but an incorrect position, while a '@' signifies a correct color and a correct position</p>
-    <p>you have 10 turns, good luck</p>
+    <h2>Welcome To Mastermind</h2>
+    <p>The code will be in the following colors: <%= c_code.values.join(', ') %></p>
+    <p>An 'O' signifies a correct color but an incorrect position, while an '@' signifies a correct color and a correct position. You have 10 turns. Good luck!</p>
     <table>
       <tr>
         <th>turn</th>
@@ -18,17 +18,19 @@
     </table>
       
       
-
-    <p>turn number: <%= turn %></p>
-    <p>your guess is: <%= guess %></p>
-    <p><%= result %></p>
-    <p><%= result if result == 'Correct! You Win!'%></p>
       
-    
-    <form>
-      <input type='text' name='color_guess'/>
-      <input type='submit' value='submit guess'/>
-    </form>
+    <% if turn >= 10 || result == 'Correct! You Win!'%>
+      <form>
+        <input type='hidden' name='play_again' value='yes'/>
+        <input type='submit' value='Play Again!'/>
+      </form>
+    <% elsif %> 
+      <form>
+        <input type='text' name='color_guess' autofocus/>
+        <input type='submit' value='submit guess'/>
+        <input type='hidden' name='play_again' value='no'/>
+      </form>
+    <% end %>
 
   </body>
 </html>

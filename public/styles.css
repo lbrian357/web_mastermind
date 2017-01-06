@@ -1,0 +1,23 @@
+html {
+  background-color: #CCCCE5;
+}
+
+body {
+  text-align: center;
+  vertical-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  margin: 0 auto;
+  text-align: center;
+}
+
+table th{
+  border:1px solid black;
+}
+
+table td{
+  border:1px solid black;
+}
