@@ -1,6 +1,6 @@
 require_relative 'mastermind.rb'
 require 'sinatra'
-require 'sinatra/reloader'
+#require 'sinatra/reloader'
 
 class Counter
   attr_accessor :count
