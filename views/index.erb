@@ -6,8 +6,11 @@
 
   <body>
     <h2>Welcome To Mastermind</h2>
-    <p>The code will be in the following colors: <%= c_code.values.join(', ') %></p>
-    <p>An 'O' signifies a correct color but an incorrect position, while an '@' signifies a correct color and a correct position. You have 10 turns. Good luck!</p>
+    <p>The code you need to crack will be in the following colors: <%= c_code.values.join(', ') %></p>
+    <p>
+    Enter your code in words seperated by a space. For example, 'red red red red' will enter 4 reds in that order as your guess. 
+    </p>
+    <p>A 'O' signifies a correct color but an incorrect position, while an '@' signifies a correct color and a correct position. You have 10 turns. Good luck!</p>
     <table>
       <tr>
         <th>turn</th>
